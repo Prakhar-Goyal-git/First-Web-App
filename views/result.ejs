@@ -1,0 +1,44 @@
+<%- include("./partials/header") %>
+
+    <head>
+        <style>
+            img {
+                height: 70%;
+            }
+
+            .card-title {
+                font-size: 1.4em;
+                font-weight: bold;
+            }
+
+            .row {
+                padding-top: 5%;
+            }
+        </style>
+    </head>
+
+
+    <ul>
+        <div class="container">
+            <div class="row">
+                <%movieData['Search'].forEach(function(movie){%>
+
+                    <div class="card ml-5 mt-5 col-3 p-0 border-0 " style="width: 18rem;">
+                        <img src="<%=movie.Poster%>" class="card-img-top" alt=" Here lies <%=movie.Title%>">
+                        <div class="card-body">
+                            <section class="card-title d-none d-md-block">
+                                <%=movie.Title%>
+                            </section>
+                            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                            <a href="/result/<%=movie.imdbID%>" class="btn btn-primary">Know More</a>
+                        </div>
+                    </div>
+
+
+                    <%})%>
+            </div>
+        </div>
+    </ul>
+
+
+    <%- include("./partials/footer")%>

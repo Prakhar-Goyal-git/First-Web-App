@@ -1,0 +1,21 @@
+img {
+    height: 50%;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 2em;
+    font-weight: 800;
+}
+
+h3 {
+    text-decoration: underline;
+}
+
+.card {
+    height: 30%;
+}

@@ -1,0 +1,42 @@
+body{
+    background-image: linear-gradient(90deg,#01022e 20%,#480ca8,#e63946);
+}
+h1{
+    font-weight: 700;
+}
+#mainnavbar .navbar-brand{
+    font-size: 2em;
+    color: #d3f8fc;
+}
+.nav-link{
+    font-size: 1.5em;
+}
+.search{
+    height:70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-space{
+    background-color: white;
+    height: 50vh;
+    width: 50ch;
+    border-radius: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(50px);
+}
+.content{
+    text-align: center;
+}
+.movie{
+    font-size: 3em;
+}
+.signup{
+    background-color:#fefae0;
+}
+.signup:hover{
+    background-color:#cfcab2;
+}

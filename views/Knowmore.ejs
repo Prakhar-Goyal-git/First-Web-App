@@ -1,0 +1,120 @@
+<%- include("./partials/header") %>
+
+    <head>
+        <link rel="stylesheet" href="public/css/index2.css">
+        <style>
+            img {
+                height: 50%;
+            }
+
+            section {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .card-title {
+                font-size: 2em;
+                font-weight: 800;
+            }
+
+            h3 {
+                text-decoration: underline;
+            }
+
+            .card {
+                height: 30%;
+            }
+
+            .head {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+
+
+    <section class="row pt-5 mt-5 ml-5">
+        <div class="card p-0 border-0 ml-4" style="width: 18rem;">
+            <img src="<%=movieData.Poster%>" class="card-img-top" alt="...">
+            <div class="card-body">
+                <div class="card-title mb-3 d-md-block">
+                    <%=movieData.Title%>
+                </div>
+                <p class="card-text mb-0">IMDB Rating : <%=movieData.imdbRating%>
+                </p>
+                <p class="card-text">Year : <%=movieData.Year%>
+                </p>
+                <button class="btn btn-outline-danger mt-3">Vote <span class="badge badge-danger">
+                        <%=movieData.imdbVotes%>
+                    </span></button>
+                <button class="btn btn-outline-secondary mt-3 ml-3">Comment</button>
+            </div>
+        </div>
+        <aside class="jumbotron col-8 mr-5 p-5 bg-light">
+            <div class="row">
+                <div class="col-4 head">
+                    <h3>Plot</h3>
+                </div>
+                <div class="col-8 card bg-dark text-light p-3">
+                    <%=movieData.Plot%>
+                </div>
+            </div>
+            <div class="row mt-4 pt-2">
+                <div class="col-4 head">
+                    <h3>Actors</h3>
+                </div>
+                <div class="col-8 card bg-dark text-light p-3">
+                    <%=movieData.Actors%>
+                </div>
+            </div>
+            <div class="row mt-4 pt-2">
+                <div class="col-4 head">
+                    <h3>Ratings</h3>
+                </div>
+                <div class="col-8 card bg-dark text-light p-3">
+                    <ul>
+                        <%movieData['Ratings'].forEach(function(rate){%>
+
+                            <li>
+                                <%=rate.Source%> : <%=rate.Value%>
+                            </li>
+
+                            <%})%>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row mt-4 pt-3">
+                <div class="col-4 head">
+                    <h3>Box-Office </h3>
+                </div>
+                <div class="col-8   ">
+                    <h4>
+                        <span class="badge badge-success p-2">
+                            <%=movieData.BoxOffice%>
+                        </span>
+                    </h4>
+                </div>
+            </div>
+
+
+            <div class="row mt-4 pt-3">
+                <div class="col-4 head">
+                    <h3>Production</h3>
+                </div>
+                <div class="col-8">
+                    <h4>
+                        <span class="badge badge-danger p-2">
+                            <%=movieData.Production%>
+                        </span>
+                    </h4>
+                </div>
+            </div>
+
+        </aside>
+    </section>
+
+
+
+    <%- include("./partials/footer")%>
