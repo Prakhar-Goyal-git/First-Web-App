@@ -3,8 +3,9 @@
     <head>
         <link rel="stylesheet" href="public/css/index2.css">
         <style>
-            img {
-                height: 50%;
+            #movie-img {
+                width: 100%;
+                height: 30%;
             }
 
             section {
@@ -13,7 +14,7 @@
             }
 
             .card-title {
-                font-size: 2em;
+                font-size: 1.75em;
                 font-weight: 800;
             }
 
@@ -27,8 +28,21 @@
 
             .head {
                 display: flex;
-                justify-content: center;
+                /* justify-content: center; */
                 align-items: center;
+                padding-left: 2em;
+            }
+
+            .plot {
+                background-color: #1a535c;
+            }
+
+            .actor {
+                background-color: #fca311;
+            }
+
+            .rotton {
+                background-color: #3d5a80;
             }
         </style>
     </head>
@@ -36,8 +50,8 @@
 
     <section class="row pt-5 mt-5 ml-5">
         <div class="card p-0 border-0 ml-4" style="width: 18rem;">
-            <img src="<%=movieData.Poster%>" class="card-img-top" alt="...">
-            <div class="card-body">
+            <img id="movie-img" src="<%=movieData.Poster%>" class="card-img-top" alt="...">
+            <div class="card-body pt-2">
                 <div class="card-title mb-3 d-md-block">
                     <%=movieData.Title%>
                 </div>
@@ -45,10 +59,10 @@
                 </p>
                 <p class="card-text">Year : <%=movieData.Year%>
                 </p>
-                <button class="btn btn-outline-danger mt-3">Vote <span class="badge badge-danger">
+                <button class="btn btn-outline-danger">Vote <span class="badge badge-danger">
                         <%=movieData.imdbVotes%>
                     </span></button>
-                <button class="btn btn-outline-secondary mt-3 ml-3">Comment</button>
+                <button class="btn btn-outline-secondary ml-3">Comment</button>
             </div>
         </div>
         <aside class="jumbotron col-8 mr-5 p-5 bg-light">
@@ -56,7 +70,7 @@
                 <div class="col-4 head">
                     <h3>Plot</h3>
                 </div>
-                <div class="col-8 card bg-dark text-light p-3">
+                <div class="col-8 card text-light p-3 plot">
                     <%=movieData.Plot%>
                 </div>
             </div>
@@ -64,7 +78,7 @@
                 <div class="col-4 head">
                     <h3>Actors</h3>
                 </div>
-                <div class="col-8 card bg-dark text-light p-3">
+                <div class="col-8 card text-light p-3 actor">
                     <%=movieData.Actors%>
                 </div>
             </div>
@@ -72,8 +86,8 @@
                 <div class="col-4 head">
                     <h3>Ratings</h3>
                 </div>
-                <div class="col-8 card bg-dark text-light p-3">
-                    <ul>
+                <div class="col-8 card text-light p-3 rotton">
+                    <ul class="pl-4">
                         <%movieData['Ratings'].forEach(function(rate){%>
 
                             <li>
@@ -105,9 +119,9 @@
                 </div>
                 <div class="col-8">
                     <h4>
-                        <span class="badge badge-danger p-2">
+                        <div class="badge badge-danger p-2">
                             <%=movieData.Production%>
-                        </span>
+                        </div>
                     </h4>
                 </div>
             </div>

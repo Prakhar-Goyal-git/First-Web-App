@@ -44,7 +44,7 @@ app.get("/result/:id", (req, res) => {
     request(url, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             const data = JSON.parse(body)
-            console.log(data)
+            //console.log(data)
             //res.send(data)
             if (data.Response === 'False') {
                 res.send("Movie Not Found")
@@ -61,9 +61,6 @@ app.get("/Aboutme", (req, res) => {
     res.render("Aboutme")
 })
 
-app.get("/Aboutme/:id", (req, res) => {
-    res.redirect("https://www.linkedin.com/in/prakhar-goyal-22348a185")
-})
 // app.get("/class/:name",(req,res,error)=>{
 //     console.log(req.params)
 //     if(!error){
