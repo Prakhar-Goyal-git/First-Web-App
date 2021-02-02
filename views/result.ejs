@@ -27,12 +27,14 @@
                     <div id="movie-card" class="card m-5 p-0 border-0 col-2 " style="width: 15rem;">
                         <img id="movie-img" src="<%=movie.Poster%>" class="card-img-top"
                             alt=" Here lies <%=movie.Title%>">
-                        <div class="card-body d-flex align-items-start flex-column bd-highlight">
-                            <section class="card-title d-none d-lg-block mb-auto bd-highlight">
+                        <div class="card-body">
+                            <section class="card-title ">
                                 <%=movie.Title%>
+                                    <br><a href="/result/<%=movie.imdbID%>"
+                                        class="btn btn-primary p-2 bd-highlight ">Know
+                                        More</a>
                             </section>
 
-                            <a href="/result/<%=movie.imdbID%>" class="btn btn-primary p-2 bd-highlight ">Know More</a>
                         </div>
                     </div>
 
